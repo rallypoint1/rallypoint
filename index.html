@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티 홈페이지</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 이미지와 유사한 폰트 추가 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 기본 폰트 설정 */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        /* 로고에 'Do Hyeon' 폰트 적용 (플레이스홀더용) */
+        .font-logo {
+            font-family: 'Do Hyeon', sans-serif;
+        }
+        /* 헤더 상단 고정 및 그림자 효과 */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- 전체 컨테이너 -->
+    <div class="max-w-7xl mx-auto bg-white">
+
+        <!-- 헤더 -->
+        <header class="sticky-header">
+            <!-- 최상단 바 -->
+            <div class="border-b">
+                <div class="container mx-auto px-4 h-12 flex justify-between items-center text-xs sm:text-sm">
+                    <div>
+                        <span class="font-bold text-orange-500">1,000,000명</span>의 동지들과 함께
+                    </div>
+                    <div class="flex items-center space-x-2 sm:space-x-4">
+                        <div class="flex items-center space-x-1 font-semibold">
+                            <span class="flex items-center justify-center w-5 h-5 bg-orange-500 text-white rounded-full text-xs">5</span>
+                            <span>축신두 님</span>
+                        </div>
+                        
+                        <!-- 지갑, 알림, 메시지 아이콘 버튼 (텍스트 제거) -->
+                        <div class="hidden sm:flex items-center space-x-4 text-gray-600">
+                            <a href="#" class="hover:text-orange-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                            </a>
+                            <a href="#" class="hover:text-orange-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+                            </a>
+                            <a href="#" class="hover:text-orange-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            </a>
+                        </div>
+
+                        <a href="#" class="text-gray-500 hover:text-gray-800">로그아웃</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 메인 네비게이션 -->
+            <div class="container mx-auto px-4 flex justify-between items-center h-20">
+                <!-- 로고 이미지 크기 수정 -->
+                <a href="#">
+                    <img src="https://rallypoint.kr/assets/imgs/logo1.svg" alt="커뮤니티 로고" class="h-12 sm:h-14">
+                </a>
+                
+                <!-- 데스크톱 네비게이션 및 메뉴 아이콘 -->
+                <div class="hidden lg:flex items-center">
+                    <nav class="flex items-center space-x-10 text-xl font-bold h-full">
+                        <a href="#" class="text-gray-700 hover:text-orange-500 h-full flex items-center">소개</a>
+                        <a href="#" class="text-gray-700 hover:text-orange-500 h-full flex items-center">공지</a>
+                        <a href="#" class="text-gray-700 hover:text-orange-500 h-full flex items-center">자유</a>
+                        <a href="#" class="text-gray-700 hover:text-orange-500 h-full flex items-center">지역</a>
+                        <a href="#" class="text-gray-700 hover:text-orange-500 h-full flex items-center">토론</a>
+                        <a href="#" class="text-gray-700 hover:text-orange-500 h-full flex items-center">대학생</a>
+                        <a href="#" class="text-gray-700 hover:text-orange-500 h-full flex items-center">민원</a>
+                    </nav>
+                    <!-- 햄버거 메뉴 아이콘 -->
+                    <button class="ml-10 p-2">
+                        <svg class="w-8 h-8 text-gray-800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- 모바일 메뉴 버튼 -->
+                <button class="lg:hidden p-2" id="mobile-menu-button">
+                    <svg class="w-8 h-8 text-gray-800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+             <!-- 모바일 메뉴 (색상 변경) -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
+                <a href="#" class="block px-5 py-4 text-lg font-semibold text-gray-800 hover:bg-gray-50">소개</a>
+                <a href="#" class="block px-5 py-4 text-lg font-semibold text-gray-800 hover:bg-gray-50">공지</a>
+                <a href="#" class="block px-5 py-4 text-lg font-semibold text-gray-800 hover:bg-orange-50 hover:text-orange-600">자유</a>
+                <a href="#" class="block px-5 py-4 text-lg font-semibold text-gray-800 hover:bg-gray-50">지역</a>
+                <a href="#" class="block px-5 py-4 text-lg font-semibold text-gray-800 hover:bg-gray-50">토론</a>
+                <a href="#" class="block px-5 py-4 text-lg font-semibold text-gray-800 hover:bg-gray-50">대학생</a>
+                <a href="#" class="block px-5 py-4 text-lg font-semibold text-gray-800 hover:bg-gray-50">민원</a>
+                <!-- 모바일용 검색창 -->
+                <div class="p-4 border-t">
+                    <div class="relative">
+                        <input type="text" class="w-full border border-gray-300 bg-white h-10 px-4 pr-10 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="검색">
+                        <button type="submit" class="absolute right-0 top-0 mt-2.5 mr-3">
+                            <svg class="text-gray-500 h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 메인 컨텐츠 -->
+        <main class="p-4 md:p-6 lg:p-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- 좌측 컨텐츠 (캐러셀) - 화살표 추가 -->
+                <div class="lg:col-span-2 rounded-lg h-96 relative overflow-hidden group" id="main-carousel">
+                    <!-- 슬라이드 컨테이너 -->
+                    <div class="flex h-full transition-transform duration-700 ease-in-out" id="carousel-slides">
+                        <!-- 슬라이드 1 -->
+                        <div class="w-full h-full flex-shrink-0 bg-gray-200 flex justify-center items-center">
+                            <img src="https://i.imgur.com/wt1neoW.png" alt="좌측 배너 이미지" class="h-full w-auto object-contain">
+                        </div>
+                        <!-- 슬라이드 2 (유튜브 영상) -->
+                        <div class="w-full h-full flex-shrink-0">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/eaD_-cFTOoU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <!-- 슬라이드 3 -->
+                        <div class="w-full h-full flex-shrink-0 bg-purple-100 flex items-center justify-center text-3xl font-bold text-purple-800">슬라이드 3</div>
+                    </div>
+                    <!-- 이전 버튼 -->
+                    <button id="carousel-prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/50 hover:bg-white/80 rounded-full p-2 transition-opacity duration-300 opacity-0 group-hover:opacity-100 z-10">
+                        <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <!-- 다음 버튼 -->
+                    <button id="carousel-next" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/50 hover:bg-white/80 rounded-full p-2 transition-opacity duration-300 opacity-0 group-hover:opacity-100 z-10">
+                        <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                    <!-- 인디케이터 -->
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2" id="carousel-indicators">
+                        <button data-slide-to="0" class="carousel-indicator w-2.5 h-2.5 bg-orange-500 rounded-full"></button>
+                        <button data-slide-to="1" class="carousel-indicator w-2.5 h-2.5 bg-white/70 rounded-full"></button>
+                        <button data-slide-to="2" class="carousel-indicator w-2.5 h-2.5 bg-white/70 rounded-full"></button>
+                    </div>
+                </div>
+                <!-- 우측 배너 (이미지로 교체하고 텍스트 추가) -->
+                <div class="hidden lg:block rounded-lg h-96 relative">
+                    <img src="https://i.imgur.com/bUREwEl.png" alt="우측 배너 이미지" class="w-full h-full object-cover rounded-lg">
+                    <div class="absolute bottom-4 left-4">
+                        <a href="#" class="text-white text-2xl font-bold drop-shadow-md hover:underline">
+                            당원 가입
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 중간 카드 섹션 (이미지 수정) -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-6">
+                <!-- 후원하기 -->
+                <a href="#" class="group relative block rounded-lg aspect-[4/3] overflow-hidden">
+                    <img src="https://i.imgur.com/cIipwQT.png" alt="후원하기" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-3">
+                        <h3 class="text-white font-bold text-lg">후원하기</h3>
+                    </div>
+                </a>
+                <!-- 정책 제안 -->
+                <a href="#" class="group relative block rounded-lg aspect-[4/3] overflow-hidden">
+                    <img src="https://i.imgur.com/qCc1hfO.png" alt="정책 제안" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-3">
+                        <h3 class="text-white font-bold text-lg">정책 제안</h3>
+                    </div>
+                </a>
+                <!-- 주요 일정 -->
+                <a href="#" class="group relative block rounded-lg aspect-[4/3] overflow-hidden">
+                    <img src="https://i.imgur.com/9Gg4QI3.png" alt="주요 일정" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-3">
+                        <h3 class="text-white font-bold text-lg">주요 일정</h3>
+                    </div>
+                </a>
+                <!-- 논평·브리핑 -->
+                <a href="#" class="group relative block rounded-lg aspect-[4/3] overflow-hidden">
+                    <img src="https://i.imgur.com/AhJGAcQ.png" alt="논평·브리핑" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-3">
+                        <h3 class="text-white font-bold text-lg">논평·브리핑</h3>
+                    </div>
+                </a>
+                <!-- 자료실 -->
+                <a href="#" class="group relative block rounded-lg aspect-[4/3] overflow-hidden">
+                    <img src="https://i.imgur.com/JWgQsAG.png" alt="자료실" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-3">
+                        <h3 class="text-white font-bold text-lg">자료실</h3>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 베스트 게시물 (글씨 굵기 수정) -->
+            <section class="mt-10">
+                <h2 class="text-xl font-bold pb-3 border-b-2 border-gray-900">베스트 게시물</h2>
+                <div class="divide-y divide-gray-200">
+                    <!-- 게시물 목록 -->
+                    <div class="py-2.5">
+                        <div class="flex items-center">
+                            <span class="w-24 text-sm text-gray-500 hidden sm:block">자유게시판</span>
+                            <a href="#" class="flex-grow text-base hover:underline font-semibold text-gray-800">경) 이준석 대통령 제22대 대통령 선거 당선 축! <span class="text-red-500 font-semibold">[777]</span></a>
+                            <div class="w-36 text-sm text-gray-600 flex items-center justify-end space-x-2">
+                                <span>축신두</span>
+                                <span class="px-1.5 py-0.5 text-xs text-white bg-orange-500 rounded">Lv.4</span>
+                            </div>
+                        </div>
+                        <div class="pl-24 text-xs text-gray-400 mt-1">2026. 12. 13. 00:00</div>
+                    </div>
+                    <div class="py-2.5">
+                        <div class="flex items-center">
+                            <span class="w-24 text-sm text-gray-500 hidden sm:block">자유게시판</span>
+                            <a href="#" class="flex-grow text-base hover:underline font-semibold text-gray-800">개혁신당 당원 백만명 돌파 <span class="text-red-500 font-semibold">[1,986]</span></a>
+                            <div class="w-36 text-sm text-gray-600 flex items-center justify-end space-x-2">
+                                <span>축구</span>
+                                <span class="px-1.5 py-0.5 text-xs text-white bg-orange-500 rounded">Lv.4</span>
+                            </div>
+                        </div>
+                        <div class="pl-24 text-xs text-gray-400 mt-1">2026. 12. 13. 00:00</div>
+                    </div>
+                    <div class="py-2.5">
+                        <div class="flex items-center">
+                            <span class="w-24 text-sm text-gray-500 hidden sm:block">자유게시판</span>
+                            <a href="#" class="flex-grow text-base hover:underline font-semibold text-gray-800">[속보] 토트넘 핫스퍼 챔스 우승 <span class="text-red-500 font-semibold">[999]</span></a>
+                            <div class="w-36 text-sm text-gray-600 flex items-center justify-end space-x-2">
+                                <span>구토구토</span>
+                                <span class="px-1.5 py-0.5 text-xs text-white bg-orange-500 rounded">Lv.4</span>
+                            </div>
+                        </div>
+                        <div class="pl-24 text-xs text-gray-400 mt-1">2026. 12. 13. 00:00</div>
+                    </div>
+                    <div class="py-2.5">
+                        <div class="flex items-center">
+                            <span class="w-24 text-sm text-gray-500 hidden sm:block">자유게시판</span>
+                            <a href="#" class="flex-grow text-base hover:underline font-semibold text-gray-800">코스피 7,000 돌파 <span class="text-red-500 font-semibold">[7,598]</span></a>
+                            <div class="w-36 text-sm text-gray-600 flex items-center justify-end space-x-2">
+                                <span>메구토</span>
+                                <span class="px-1.5 py-0.5 text-xs text-white bg-orange-500 rounded">Lv.4</span>
+                            </div>
+                        </div>
+                        <div class="pl-24 text-xs text-gray-400 mt-1">2026. 12. 13. 00:00</div>
+                    </div>
+                    <div class="py-2.5">
+                        <div class="flex items-center">
+                            <span class="w-24 text-sm text-gray-500 hidden sm:block">자유게시판</span>
+                            <a href="#" class="flex-grow text-base hover:underline font-semibold text-gray-800">[투표] 서울시 멤버거 맛집 추천좀 <span class="text-red-500 font-semibold">[59]</span></a>
+                            <div class="w-36 text-sm text-gray-600 flex items-center justify-end space-x-2">
+                                <span>88849161616</span>
+                                <span class="px-1.5 py-0.5 text-xs text-white bg-orange-500 rounded">Lv.4</span>
+                            </div>
+                        </div>
+                        <div class="pl-24 text-xs text-gray-400 mt-1">2026. 12. 13. 00:00</div>
+                    </div>
+                    <div class="py-2.5">
+                        <div class="flex items-center">
+                            <span class="w-24 text-sm text-gray-500 hidden sm:block">자유게시판</span>
+                            <a href="#" class="flex-grow text-base hover:underline font-semibold text-gray-800">6월 지방선거 개혁신당 압승 <span class="text-red-500 font-semibold">[71]</span></a>
+                            <div class="w-36 text-sm text-gray-600 flex items-center justify-end space-x-2">
+                                <span>맹구토버기</span>
+                                <span class="px-1.5 py-0.5 text-xs text-white bg-orange-500 rounded">Lv.4</span>
+                            </div>
+                        </div>
+                        <div class="pl-24 text-xs text-gray-400 mt-1">2026. 12. 13. 00:00</div>
+                    </div>
+                    <div class="py-2.5">
+                        <div class="flex items-center">
+                            <span class="w-24 text-sm text-gray-500 hidden sm:block">자유게시판</span>
+                            <a href="#" class="flex-grow text-base hover:underline font-semibold text-gray-800">[뉴스] 출산율 1.8명 돌파 <span class="text-red-500 font-semibold">[333]</span></a>
+                            <div class="w-36 text-sm text-gray-600 flex items-center justify-end space-x-2">
+                                <span>미니구토</span>
+                                <span class="px-1.5 py-0.5 text-xs text-white bg-orange-500 rounded">Lv.4</span>
+                            </div>
+                        </div>
+                        <div class="pl-24 text-xs text-gray-400 mt-1">2026. 12. 13. 00:00</div>
+                    </div>
+                    <div class="py-2.5">
+                        <div class="flex items-center">
+                            <span class="w-24 text-sm text-gray-500 hidden sm:block">자유게시판</span>
+                            <a href="#" class="flex-grow text-base hover:underline font-semibold text-gray-800">[속보] 독도 앞바다에서 석유 발견 <span class="text-red-500 font-semibold">[63]</span></a>
+                            <div class="w-36 text-sm text-gray-600 flex items-center justify-end space-x-2">
+                                <span>파라무그손</span>
+                                <span class="px-1.5 py-0.5 text-xs text-white bg-orange-500 rounded">Lv.4</span>
+                            </div>
+                        </div>
+                        <div class="pl-24 text-xs text-gray-400 mt-1">2026. 12. 13. 00:00</div>
+                    </div>
+                    <div class="py-2.5">
+                        <div class="flex items-center">
+                            <span class="w-24 text-sm text-gray-500 hidden sm:block">자유게시판</span>
+                            <a href="#" class="flex-grow text-base hover:underline font-semibold text-gray-800">평양의 중심에 진도 9의 강진 발생 <span class="text-red-500 font-semibold">[45]</span></a>
+                            <div class="w-36 text-sm text-gray-600 flex items-center justify-end space-x-2">
+                                <span>구토구토</span>
+                                <span class="px-1.5 py-0.5 text-xs text-white bg-orange-500 rounded">Lv.4</span>
+                            </div>
+                        </div>
+                        <div class="pl-24 text-xs text-gray-400 mt-1">2026. 12. 13. 00:00</div>
+                    </div>
+                    <div class="py-2.5">
+                        <div class="flex items-center">
+                            <span class="w-24 text-sm text-gray-500 hidden sm:block">자유게시판</span>
+                            <a href="#" class="flex-grow text-base hover:underline font-semibold text-gray-800">[속보] 한국 첫 핵추진 헬리캐리어 백범 김구함 진수 <span class="text-red-500 font-semibold">[342]</span></a>
+                            <div class="w-36 text-sm text-gray-600 flex items-center justify-end space-x-2">
+                                <span>으으으_아프다..</span>
+                                <span class="px-1.5 py-0.5 text-xs text-white bg-orange-500 rounded">Lv.4</span>
+                            </div>
+                        </div>
+                        <div class="pl-24 text-xs text-gray-400 mt-1">2026. 12. 13. 00:00</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 푸터 (문구 및 정렬 수정) -->
+        <footer class="bg-gray-50 text-gray-500 text-xs border-t mt-12 p-8">
+            <div class="container mx-auto flex justify-between items-end">
+                 <!-- 소셜 아이콘 -->
+                 <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2c-2.717 0-3.056.01-4.122.06-1.065.05-1.79.217-2.428.465a4.898 4.898 0 00-1.772 1.153 4.942 4.942 0 00-1.153 1.772c-.248.638-.415 1.363-.465 2.428C2.01 8.944 2 9.283 2 12s.01 3.056.06 4.122c.05 1.065.217 1.79.465 2.428a4.898 4.898 0 001.153 1.772 4.942 4.942 0 001.772 1.153c.638.248 1.363.415 2.428.465C8.944 21.99 9.283 22 12 22s3.056-.01 4.122-.06c1.065-.05 1.79-.217 2.428-.465a4.898 4.898 0 001.772-1.153 4.942 4.942 0 001.153-1.772c.248-.638.415-1.363.465-2.428C21.99 15.056 22 14.717 22 12s-.01-3.056-.06-4.122c-.05-1.065-.217-1.79-.465-2.428a4.898 4.898 0 00-1.153-1.772 4.942 4.942 0 00-1.772-1.153c-.638-.248-1.363-.415-2.428-.465C15.056 2.01 14.717 2 12 2zm0 1.44c2.67 0 2.987.01 4.042.058.975.044 1.504.207 1.857.344.467.182.86.399 1.254.793.393.393.61.787.793 1.254.137.353.3.882.344 1.857.048 1.055.058 1.372.058 4.042s-.01 2.987-.058 4.042c-.044.975-.207 1.504-.344 1.857a3.43 3.43 0 01-.793 1.254 3.43 3.43 0 01-1.254.793c-.353.137-.882.3-1.857.344-1.055.048-1.372.058-4.042.058s-2.987-.01-4.042-.058c-.975-.044-1.504-.207-1.857-.344a3.43 3.43 0 01-1.254-.793 3.43 3.43 0 01-.793-1.254c-.137-.353-.3-.882-.344-1.857C3.45 15.013 3.44 14.697 3.44 12s.01-2.987.058-4.042c.044-.975.207-1.504.344-1.857.182-.467.399-.86.793-1.254.393-.393.787-.61 1.254-.793.353-.137.882-.3 1.857-.344C9.013 3.45 9.303 3.44 12 3.44zm0 5.85a3.71 3.71 0 100 7.42 3.71 3.71 0 000-7.42zm0 5.98a2.27 2.27 0 110-4.54 2.27 2.27 0 010 4.54zm5.02-6.23a.88.88 0 100 1.76.88.88 0 000-1.76z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.536 2.536 0 01-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.536 2.536 0 01-1.768-1.768C2 15.255 2 12 2 12s0-3.255.418-4.814a2.536 2.536 0 011.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418zM9.75 15.5V8.5l6.5 3.5-6.5 3.5z" clip-rule="evenodd" /></svg>
+                    </a>
+                 </div>
+                 <div class="text-right space-y-1">
+                    <p>서울특별시 영등포구 여의도동</p>
+                    <p>대표권한대행 천하람 | 고유번호 413-82-71411 | 연락처 02-6788-2093</p>
+                    <p class="pt-1 font-semibold">디자인 테스트용 페이지 입니다. 개혁신당의 정식 홈페이지가 아닙니다!</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 모바일 메뉴 토글 기능
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 캐러셀 기능
+            const carouselSlides = document.getElementById('carousel-slides');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevButton = document.getElementById('carousel-prev');
+            const nextButton = document.getElementById('carousel-next');
+            const slideCount = carouselSlides.children.length;
+            let currentSlide = 0;
+            let slideInterval;
+
+            function goToSlide(slideIndex) {
+                // 슬라이드 이동
+                carouselSlides.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+                // 인디케이터 업데이트
+                indicators.forEach((indicator, index) => {
+                    if (index === slideIndex) {
+                        indicator.classList.remove('bg-white/70');
+                        indicator.classList.add('bg-orange-500');
+                    } else {
+                        indicator.classList.remove('bg-orange-500');
+                        indicator.classList.add('bg-white/70');
+                    }
+                });
+
+                currentSlide = slideIndex;
+            }
+
+            function nextSlide() {
+                const nextSlideIndex = (currentSlide + 1) % slideCount;
+                goToSlide(nextSlideIndex);
+            }
+            
+            function prevSlide() {
+                const prevSlideIndex = (currentSlide - 1 + slideCount) % slideCount;
+                goToSlide(prevSlideIndex);
+            }
+
+            function startSlideShow() {
+                // 5초마다 슬라이드 변경
+                slideInterval = setInterval(nextSlide, 5000); 
+            }
+
+            function stopSlideShow() {
+                clearInterval(slideInterval);
+            }
+
+            // 인디케이터 클릭 이벤트
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', (e) => {
+                    const slideIndex = parseInt(e.target.getAttribute('data-slide-to'));
+                    goToSlide(slideIndex);
+                    stopSlideShow();
+                    startSlideShow();
+                });
+            });
+
+            // 화살표 버튼 클릭 이벤트
+            prevButton.addEventListener('click', () => {
+                prevSlide();
+                stopSlideShow();
+                startSlideShow();
+            });
+
+            nextButton.addEventListener('click', () => {
+                nextSlide();
+                stopSlideShow();
+                startSlideShow();
+            });
+
+            // 페이지 로드 시 슬라이드 쇼 시작
+            startSlideShow();
+        });
+    </script>
+</body>
+</html>
